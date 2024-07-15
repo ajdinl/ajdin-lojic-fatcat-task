@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { User } from '@homework-task/types/user';
+import { useNavigate } from 'react-router-dom';
+
+import { Button } from './Button';
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
@@ -8,6 +11,7 @@ const ListComponent: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -41,9 +45,12 @@ const ListComponent: React.FC = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4 text-center text-primary">
-                User List
-            </h1>
+            <div className="flex items-center mb-4">
+                <Button onClick={() => navigate('/')} className="mr-4">
+                    Back
+                </Button>
+                <h1 className="text-2xl font-bold text-primary">User List</h1>
+            </div>
             <ul className="space-y-4">
                 {users.map((user) => (
                     <li

@@ -1,7 +1,7 @@
 import { CardProps } from '@homework-task/types/card';
 import clsx from 'clsx';
 
-export const Card: React.FC<CardProps> = ({ title, text, link }) => (
+export const Card: React.FC<CardProps> = ({ title, text, link, taskLink }) => (
     <div
         className={clsx(
             'flex',
@@ -39,6 +39,18 @@ export const Card: React.FC<CardProps> = ({ title, text, link }) => (
         >
             Read more
             <img src="/media/landing/arrow-purple.svg" alt="" />
+        </a>
+        <a
+            href={taskLink}
+            className={clsx(
+                'mt-auto',
+                'flex',
+                'items-center',
+                'text-primary',
+                'gap-2.5'
+            )}
+        >
+            Click me to see task results
         </a>
     </div>
 );

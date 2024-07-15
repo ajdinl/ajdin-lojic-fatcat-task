@@ -1,12 +1,9 @@
-import { Landing } from './components/landing/Landing';
-import ListComponent from './components/ListComponent';
-import './styles.css';
+import { Outlet } from 'react-router-dom';
 
 function App() {
     return (
         <main>
-            <Landing />
-            <ListComponent />
+            <Outlet />
         </main>
     );
 }
