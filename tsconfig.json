@@ -17,6 +17,6 @@
         "isolatedModules": true,
         "moduleResolution": "node"
     },
-    "include": ["src", "global.d.ts"],
+    "include": ["src", "global.d.ts", "vite-env.d.ts"],
     "exclude": ["node_modules"]
 }

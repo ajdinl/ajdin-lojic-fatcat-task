@@ -5,7 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from './Button';
 
-const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+const apiUrl: string = import.meta.env.VITE_API_URL;
+
+if (!apiUrl) {
+    throw new Error('VITE_API_URL is not defined');
+}
 
 const ListComponent: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);
