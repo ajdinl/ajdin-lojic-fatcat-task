@@ -1,9 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { RouterProvider } from 'react-router-dom';
+
+const queryClient = new QueryClient();
+import './styles.css';
+import { router } from './router';
 
 function App() {
     return (
         <main>
-            <Outlet />
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} />
+            </QueryClientProvider>
         </main>
     );
 }
