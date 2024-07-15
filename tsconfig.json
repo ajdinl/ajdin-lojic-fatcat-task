@@ -10,7 +10,7 @@
         "paths": {
             "@homework-task/*": ["src/*"]
         },
-        "jsx": "react",
+        "jsx": "react-jsx",
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
