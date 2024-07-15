@@ -10,11 +10,11 @@ import useCreatePost from './useCreatePostMutation';
 const postSchema = z.object({
     title: z
         .string()
-        .nonempty('Title is required')
+        .min(1, { message: 'Title is required' })
         .max(100, 'Title cannot exceed 100 characters'),
     body: z
         .string()
-        .nonempty('Body is required')
+        .min(1, { message: 'Body is required' })
         .max(500, 'Body cannot exceed 500 characters'),
 });
 
@@ -78,12 +78,12 @@ const CreatePostForm: React.FC = () => {
                                 </p>
                             )}
                         </div>
-                        <button
+                        <Button
                             type="submit"
                             className="bg-mainGreen text-white p-2 rounded-lg w-full hover:bg-primary transition duration-300"
                         >
                             Submit
-                        </button>
+                        </Button>
                     </>
                 )}
             />

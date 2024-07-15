@@ -5,9 +5,11 @@ export const Button: React.FC<ButtonProps> = ({
     children,
     onClick,
     className,
+    type = 'button',
 }) => {
     return (
         <button
+            type={type}
             className={clsx(
                 'rounded-lg',
                 'px-4',
