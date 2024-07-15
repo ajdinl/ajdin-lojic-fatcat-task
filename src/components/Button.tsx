@@ -1,6 +1,11 @@
+import { ButtonProps } from '@homework-task/types/button';
 import clsx from 'clsx';
 
-export const Button = ({ children, onClick, className }) => {
+export const Button: React.FC<ButtonProps> = ({
+    children,
+    onClick,
+    className,
+}) => {
     return (
         <button
             className={clsx(
