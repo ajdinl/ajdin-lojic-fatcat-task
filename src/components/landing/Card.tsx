@@ -1,6 +1,7 @@
+import { CardProps } from '@homework-task/types/card';
 import clsx from 'clsx';
 
-export const Card = ({ title, text, link }) => (
+export const Card: React.FC<CardProps> = ({ title, text, link }) => (
     <div
         className={clsx(
             'flex',

@@ -1,3 +1,4 @@
+import { CardProps } from '@homework-task/types/card';
 import clsx from 'clsx';
 
 import { Card } from './Card';
@@ -5,7 +6,7 @@ import { Card } from './Card';
 // eslint-disable-next-line no-undef
 const vscodeProjectLink = `vscode://file/${__CWD__}`;
 
-const cards = [
+const cards: CardProps[] = [
     {
         title: 'Transfer the project to TypeScript',
         text: 'Your first task involves transitioning this project from JavaScript to TypeScript.',
