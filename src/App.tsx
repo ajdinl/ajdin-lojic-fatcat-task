@@ -1,9 +1,9 @@
+import { router } from '@homework-task/routes';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RouterProvider } from 'react-router-dom';
 
 const queryClient = new QueryClient();
-import './styles.css';
-import { router } from './routes';
+import '@homework-task/styles.css';
 
 function App() {
     return (

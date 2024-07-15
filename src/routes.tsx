@@ -1,10 +1,9 @@
+import CreatePostForm from '@homework-task/components/Form/CreatePostForm';
+import { Landing } from '@homework-task/components/Landing/Landing';
+import ListComponent from '@homework-task/components/List/ListComponent';
+import PageGeneratorComponent from '@homework-task/components/PageGenerator/PageGeneratorComponent';
+import { ROUTES } from '@homework-task/utils/constants';
 import { createBrowserRouter } from 'react-router-dom';
-
-import CreatePostForm from './components/Form/CreatePostForm';
-import { Landing } from './components/Landing/Landing';
-import ListComponent from './components/List/ListComponent';
-import PageGeneratorComponent from './components/PageGenerator/PageGeneratorComponent';
-import { ROUTES } from './constants';
 
 export const router = createBrowserRouter([
     { path: ROUTES.ROOT, element: <Landing /> },

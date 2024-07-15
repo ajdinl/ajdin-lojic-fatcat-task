@@ -32,7 +32,10 @@ export const FormGeneratorComponent = <T extends FieldValues>({
             {renderForm(methods)}
             {mutation.isError && (
                 <p className="text-red mt-2">
-                    Error: {mutation.error?.message}
+                    Error:
+                    {mutation.error instanceof Error
+                        ? mutation.error.message
+                        : String(mutation.error)}
                 </p>
             )}
         </form>

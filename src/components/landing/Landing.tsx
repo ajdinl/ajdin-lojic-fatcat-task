@@ -1,4 +1,5 @@
 import { CardProps } from '@homework-task/types/card';
+import { ROUTES } from '@homework-task/utils/constants';
 import clsx from 'clsx';
 
 import { Card } from './Card';
@@ -15,17 +16,17 @@ const cards: CardProps[] = [
     {
         title: 'Create a scalable List Component',
         text: 'Build a scalable React component to fetch and display key information (id, name, username, email, and phone) from an API in a list format.',
-        link: '/list',
+        link: ROUTES.LIST,
     },
     {
         title: 'Create a Form Generator Component',
         text: 'Build a versatile React component with validation, API hook, and form rendering capabilities. ',
-        link: '/form',
+        link: ROUTES.FORM,
     },
     {
         title: 'Create a Page Generator Component',
         text: 'Create a versatile React component for dynamic webpage construction, adapting to various layouts and components through received props.',
-        link: '/page-generator',
+        link: ROUTES.PAGE_GENERATOR,
     },
 ];
 
