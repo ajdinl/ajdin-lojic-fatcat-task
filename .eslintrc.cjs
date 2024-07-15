@@ -17,7 +17,7 @@ const config = {
         'plugin:prettier/recommended',
         'prettier',
     ],
-    ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.js'],
+    ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
     settings: {
         react: { version: '18.2' },
         'import/resolver': {
@@ -45,6 +45,12 @@ const config = {
         },
     },
     overrides: [
+        {
+            files: ['vite.config.ts'],
+            parserOptions: {
+                project: './tsconfig.json',
+            },
+        },
         {
             extends: [
                 'plugin:@typescript-eslint/recommended-requiring-type-checking',
