@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { User } from '@homework-task/types/user';
 import { useNavigate } from 'react-router-dom';
 
-import { Button } from './Button';
+import { Button } from '../Button';
 
 const apiUrl: string = import.meta.env.VITE_API_URL;
 

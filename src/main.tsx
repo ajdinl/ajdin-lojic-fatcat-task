@@ -5,9 +5,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import App from './App';
-import CreatePostForm from './components/CreatePostForm';
-import { Landing } from './components/landing/Landing';
-import ListComponent from './components/ListComponent';
+import CreatePostForm from './components/Form/CreatePostForm';
+import { Landing } from './components/Landing/Landing';
+import ListComponent from './components/List/ListComponent';
 import './styles.css';
 
 const queryClient = new QueryClient();

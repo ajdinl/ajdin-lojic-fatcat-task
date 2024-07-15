@@ -3,9 +3,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
 
-import { Button } from './Button';
 import { FormGeneratorComponent } from './FormGeneratorComponent';
 import useCreatePost from './useCreatePostMutation';
+import { Button } from '../Button';
 
 const postSchema = z.object({
     title: z
