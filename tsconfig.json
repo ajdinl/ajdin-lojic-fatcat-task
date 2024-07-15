@@ -8,7 +8,7 @@
         "noImplicitThis": true,
         "baseUrl": "./",
         "paths": {
-            "@/*": ["src/*"]
+            "@homework-task/*": ["src/*"]
         },
         "jsx": "react",
         "esModuleInterop": true,
