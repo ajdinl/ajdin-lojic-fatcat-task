@@ -28,7 +28,7 @@ const CreatePostForm: React.FC = () => {
             <div className="relative flex items-center mb-4">
                 <Button
                     onClick={() => navigate('/')}
-                    className="absolute left-0 px-4 py-2"
+                    className="absolute left-0 px-4 py-2 bg-mainYellow hover:bg-yellow"
                 >
                     Back
                 </Button>
@@ -41,7 +41,7 @@ const CreatePostForm: React.FC = () => {
                 validationSchema={postSchema}
                 successMessage="Successfully created post"
                 renderForm={({ register, formState: { errors } }) => (
-                    <>
+                    <div className="p-4 bg-white rounded-lg shadow-md">
                         <div className="mb-4">
                             <label
                                 htmlFor="title"
@@ -84,7 +84,7 @@ const CreatePostForm: React.FC = () => {
                         >
                             Submit
                         </Button>
-                    </>
+                    </div>
                 )}
             />
         </div>
