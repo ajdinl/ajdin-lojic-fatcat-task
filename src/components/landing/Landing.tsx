@@ -25,7 +25,7 @@ const cards: CardProps[] = [
     {
         title: 'Create a Page Generator Component',
         text: 'Create a versatile React component for dynamic webpage construction, adapting to various layouts and components through received props.',
-        link: '/page',
+        link: '/page-generator',
     },
 ];
 

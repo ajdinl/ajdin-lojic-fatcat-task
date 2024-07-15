@@ -3,7 +3,7 @@ import { RouterProvider } from 'react-router-dom';
 
 const queryClient = new QueryClient();
 import './styles.css';
-import { router } from './router';
+import { router } from './routes';
 
 function App() {
     return (
