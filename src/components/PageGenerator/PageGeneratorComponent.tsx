@@ -37,12 +37,6 @@ const data: SectionType[] = [
                     ],
                 },
             },
-        ],
-    },
-    {
-        type: 'layoutSection',
-        props: { backgroundColor: 'bg-white' },
-        components: [
             {
                 type: 'componentTrustBar',
                 props: {
