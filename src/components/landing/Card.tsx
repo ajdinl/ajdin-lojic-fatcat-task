@@ -37,8 +37,8 @@ export const Card: React.FC<CardProps> = ({ title, text, link }) => (
                 'gap-2.5'
             )}
         >
-            Click here to see result
-            <img src="/media/landing/arrow-purple.svg" alt="" />
+            {link ? 'Click here to see result' : ''}
+            {link && <img src="/media/landing/arrow-purple.svg" alt="" />}
         </a>
     </div>
 );

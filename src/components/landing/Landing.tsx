@@ -11,7 +11,6 @@ const cards: CardProps[] = [
     {
         title: 'Transfer the project to TypeScript',
         text: 'Your first task involves transitioning this project from JavaScript to TypeScript.',
-        link: '',
     },
     {
         title: 'Create a scalable List Component',
