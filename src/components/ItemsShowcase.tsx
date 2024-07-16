@@ -1,4 +1,4 @@
-import { ItemsShowcaseProps } from '@homework-task/types/item';
+import { ItemsShowcaseProps } from '@homework-task/types/item-showcase';
 
 export const ItemsShowcase: React.FC<ItemsShowcaseProps> = ({ items }) => {
     return (

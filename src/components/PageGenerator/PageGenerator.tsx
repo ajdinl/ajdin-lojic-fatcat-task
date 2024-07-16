@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Hero } from '@homework-task/components/Hero';
 import { ItemsShowcase } from '@homework-task/components/ItemsShowcase';
+import { TrustBar } from '@homework-task/components/TrustBar';
 import {
     ComponentType,
     PageGeneratorProps,
@@ -17,6 +18,8 @@ const PageGenerator: React.FC<PageGeneratorProps> = ({ sections }) => {
                 return <Hero key={index} {...props} />;
             case 'componentItemsShowcase':
                 return <ItemsShowcase key={index} {...props} />;
+            case 'componentTrustBar':
+                return <TrustBar key={index} {...props} />;
             default:
                 return null;
         }

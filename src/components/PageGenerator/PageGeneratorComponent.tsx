@@ -39,6 +39,23 @@ const data: SectionType[] = [
             },
         ],
     },
+    {
+        type: 'layoutSection',
+        props: { backgroundColor: 'bg-white' },
+        components: [
+            {
+                type: 'componentTrustBar',
+                props: {
+                    images: [
+                        'media/cards/shape1.svg',
+                        'media/cards/shape2.svg',
+                        'media/cards/shape3.svg',
+                        'media/cards/shape4.svg',
+                    ],
+                },
+            },
+        ],
+    },
 ];
 
 const PageGeneratorComponent: React.FC = () => {

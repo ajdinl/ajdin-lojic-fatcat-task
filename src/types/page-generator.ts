@@ -1,9 +1,11 @@
 import { HeroProps } from './hero';
-import { ItemsShowcaseProps } from './item';
+import { ItemsShowcaseProps } from './item-showcase';
+import { TrustBarProps } from './trustbar';
 
 export type ComponentType =
     | { type: 'componentHero'; props: HeroProps }
-    | { type: 'componentItemsShowcase'; props: ItemsShowcaseProps };
+    | { type: 'componentItemsShowcase'; props: ItemsShowcaseProps }
+    | { type: 'componentTrustBar'; props: TrustBarProps };
 
 export type SectionType = {
     type: 'layoutSection';
