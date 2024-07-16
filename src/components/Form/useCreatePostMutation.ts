@@ -1,4 +1,8 @@
-import { CreatePostData, CreatePostVariables } from '@homework-task/types/post';
+import {
+    CreatePostData,
+    CreatePostVariables,
+    createPostDataSchema,
+} from '@homework-task/types/post';
 import { useMutation } from 'react-query';
 
 const apiUrlPost = import.meta.env.VITE_API_URL_POST;
@@ -22,7 +26,11 @@ const useCreatePost = () => {
                 throw new Error('Failed to create post');
             }
 
-            return response.json();
+            const responseData: unknown = await response.json();
+
+            const parsedResponse = createPostDataSchema.parse(responseData);
+
+            return parsedResponse;
         }
     );
 };
