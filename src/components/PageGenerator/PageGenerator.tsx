@@ -7,8 +7,13 @@ import {
     ComponentType,
     PageGeneratorProps,
 } from '@homework-task/types/page-generator';
+import { useNavigate } from 'react-router-dom';
+
+import { Button } from '../Button';
 
 const PageGenerator: React.FC<PageGeneratorProps> = ({ sections }) => {
+    const navigate = useNavigate();
+
     const resolveComponent = (
         { type, props }: ComponentType,
         index: number
@@ -26,7 +31,13 @@ const PageGenerator: React.FC<PageGeneratorProps> = ({ sections }) => {
     };
 
     return (
-        <div className="font-sans p-4 max-w-4xl mx-auto">
+        <div className="relative font-sans p-4 max-w-4xl mx-auto">
+            <Button
+                onClick={() => navigate('/')}
+                className="absolute top-4 left-4 py-2 px-4 bg-mainYellow hover:bg-yellow"
+            >
+                Back
+            </Button>
             {sections.map((section, index) => (
                 <div
                     key={index}
