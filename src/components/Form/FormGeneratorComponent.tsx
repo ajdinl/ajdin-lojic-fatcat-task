@@ -4,13 +4,13 @@ import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const FormGeneratorComponent = <T extends FieldValues>({
+export const FormGeneratorComponent = <T extends FieldValues, TData, TError>({
     useMutation,
     validationSchema,
     renderForm,
     successMessage,
     setIsSubmitting,
-}: FormGeneratorProps<T> & {
+}: FormGeneratorProps<T, TData, TError> & {
     setIsSubmitting: (isSubmitting: boolean) => void;
 }) => {
     const methods = useForm<T>({

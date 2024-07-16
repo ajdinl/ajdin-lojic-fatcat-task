@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { CreatePostData, CreatePostError } from '@homework-task/types/post';
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
 
@@ -37,12 +38,14 @@ const CreatePostForm: React.FC = () => {
                     Create a New Post
                 </h1>
             </div>
-            <FormGeneratorComponent<PostFormInputs>
+            <FormGeneratorComponent<
+                PostFormInputs,
+                CreatePostData,
+                CreatePostError
+            >
                 useMutation={useCreatePost}
                 validationSchema={postSchema}
-                successMessage="Successfully created post"
-                setIsSubmitting={setIsSubmitting}
-                renderForm={({ register, formState: { errors } }) => (
+                renderForm={(methods) => (
                     <div className="p-4 bg-white rounded-lg shadow-md">
                         <div className="mb-4">
                             <label
@@ -54,11 +57,11 @@ const CreatePostForm: React.FC = () => {
                             <input
                                 id="title"
                                 className="w-full p-2 border border-gray20 rounded-lg"
-                                {...register('title')}
+                                {...methods.register('title')}
                             />
-                            {errors.title && (
+                            {methods.formState.errors.title && (
                                 <p className="text-red mt-1">
-                                    {errors.title.message}
+                                    {methods.formState.errors.title.message}
                                 </p>
                             )}
                         </div>
@@ -72,11 +75,11 @@ const CreatePostForm: React.FC = () => {
                             <textarea
                                 id="body"
                                 className="w-full p-2 border border-gray20 rounded-lg"
-                                {...register('body')}
+                                {...methods.register('body')}
                             />
-                            {errors.body && (
+                            {methods.formState.errors.body && (
                                 <p className="text-red mt-1">
-                                    {errors.body.message}
+                                    {methods.formState.errors.body.message}
                                 </p>
                             )}
                         </div>
@@ -93,6 +96,8 @@ const CreatePostForm: React.FC = () => {
                         </Button>
                     </div>
                 )}
+                successMessage="Post created successfully!"
+                setIsSubmitting={setIsSubmitting}
             />
         </div>
     );
