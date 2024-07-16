@@ -1,8 +1,6 @@
-export interface Item {
-    title: string;
-    description: string;
-}
-
-export interface ItemsShowcaseProps {
-    items: Item[];
-}
+export type ItemsShowcaseProps = {
+    items: {
+        title: string;
+        description: string;
+    }[];
+};

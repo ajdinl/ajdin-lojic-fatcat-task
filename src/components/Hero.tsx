@@ -2,7 +2,7 @@ import { HeroProps } from '@homework-task/types/hero';
 
 export const Hero: React.FC<HeroProps> = ({ title, image }) => {
     return (
-        <div className="flex row justify-center items-center gap-4 h-screen">
+        <div className="flex row justify-center items-center gap-4">
             <div className="w-4/12">
                 <h1 className="text-3xl font-bold">{title}</h1>
             </div>
