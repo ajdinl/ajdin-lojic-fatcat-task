@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
@@ -22,6 +22,7 @@ type PostFormInputs = z.infer<typeof postSchema>;
 
 const CreatePostForm: React.FC = () => {
     const navigate = useNavigate();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     return (
         <div className="max-w-2xl mx-auto p-4">
@@ -40,6 +41,7 @@ const CreatePostForm: React.FC = () => {
                 useMutation={useCreatePost}
                 validationSchema={postSchema}
                 successMessage="Successfully created post"
+                setIsSubmitting={setIsSubmitting}
                 renderForm={({ register, formState: { errors } }) => (
                     <div className="p-4 bg-white rounded-lg shadow-md">
                         <div className="mb-4">
@@ -80,9 +82,14 @@ const CreatePostForm: React.FC = () => {
                         </div>
                         <Button
                             type="submit"
-                            className="bg-mainGreen text-white p-2 rounded-lg w-full hover:bg-primary transition duration-300"
+                            className={`${
+                                isSubmitting
+                                    ? 'bg-gray60'
+                                    : 'bg-mainGreen hover:bg-primary'
+                            } text-white p-2 rounded-lg w-full transition duration-300`}
+                            disabled={isSubmitting}
                         >
-                            Submit
+                            {isSubmitting ? 'Submitting' : 'Submit'}
                         </Button>
                     </div>
                 )}

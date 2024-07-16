@@ -9,7 +9,10 @@ export const FormGeneratorComponent = <T extends FieldValues>({
     validationSchema,
     renderForm,
     successMessage,
-}: FormGeneratorProps<T>) => {
+    setIsSubmitting,
+}: FormGeneratorProps<T> & {
+    setIsSubmitting: (isSubmitting: boolean) => void;
+}) => {
     const methods = useForm<T>({
         resolver: zodResolver(validationSchema),
         mode: 'onSubmit',
@@ -19,12 +22,14 @@ export const FormGeneratorComponent = <T extends FieldValues>({
     const mutation = useMutation();
 
     const onSubmit: SubmitHandler<T> = (data) => {
+        setIsSubmitting(true);
         mutation.mutate(data, {
             onSuccess: () => {
                 if (successMessage) {
                     toast.success(successMessage);
                 }
                 reset();
+                setIsSubmitting(false);
             },
             onError: (error) => {
                 if (error instanceof Error) {
@@ -32,6 +37,7 @@ export const FormGeneratorComponent = <T extends FieldValues>({
                 } else {
                     toast.error('An unknown error occurred');
                 }
+                setIsSubmitting(false);
             },
         });
     };
