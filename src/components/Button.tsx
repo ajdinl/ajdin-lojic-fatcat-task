@@ -6,6 +6,7 @@ export const Button: React.FC<ButtonProps> = ({
     onClick,
     className,
     type = 'button',
+    disabled = false,
 }) => {
     return (
         <button
@@ -19,6 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
                 className
             )}
             onClick={onClick}
+            disabled={disabled}
         >
             {children}
         </button>
